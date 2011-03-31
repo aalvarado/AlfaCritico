@@ -1,0 +1,62 @@
+/*======= css resets =======*/
+html,body,div,form,img, h1, h2, h3, h4, h5, h6,
+ iframe, p, span, ul, ol, li, fieldset, legend {
+	padding:0px;
+	margin:0px;
+	border:0px;
+}
+ul{
+	text-indent:0px;
+}
+/*============*/
+.float_right{
+	float:right;
+}
+.float_left{
+	float:left;
+}
+h1{
+	
+}
+h2{
+	
+}
+h3{
+	
+}
+body{
+	
+}
+#wrapper{
+	
+}
+#top{
+	
+}
+#banner{
+	
+}
+#nav{
+	
+}
+#nav a, #nav a:active, #nav a:visited{
+	
+}
+#nav a:hover{
+	
+}
+#nav li{
+	
+}
+#nav li a{
+	
+}
+#main{
+	
+}
+#main a, #main a:active, #main a:visited{
+	
+}
+#footer{
+	
+}
