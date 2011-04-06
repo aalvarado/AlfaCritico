@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
     <head>
@@ -6,13 +6,91 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}">
         #{get 'moreStyles' /}
-        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
-        <script src="@{'/public/javascripts/jquery-1.4.2.min.js'}" type="text/javascript" charset="utf-8"></script>
-        #{get 'moreScripts' /}
     </head>
     <body>
-        <div id="wrapper">
-			#{doLayout /}
-		</div>		
+		<div id="wrapper">
+			<div id="top-ribbon">
+				
+			</div>
+			
+			<div id="top">
+			
+				<div id="logo">
+					<strong>
+						<a href="/">AlfaCritico</a>
+					</strong>
+				</div>
+				<div id="login-panel">
+					<ul>
+						<li><a href="login.html">iniciar sesion</a></li>
+						<li><a href="register.html">registrarse</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="navigation">
+				<ul>
+					<li><a href="/">Inicio</a></li>
+					<li><a href="/movies">Peliculas</a></li>
+					<li><a href="/books">Libros</a></li>
+					<li id="search-element">
+						<div id="search-wrapper">
+						<input type="text" class="input_text" name="search" />
+						<a href="#"  class="button1" >buscar</a>
+					</div>
+				</li>
+				</ul>
+			</div>
+			
+			<div id="banner">
+				
+			</div>
+			<div id="middle">
+				
+				<div id="content">
+					#{doLayout /}
+					<div class="section">
+						<div id="latest-reviews">
+							<div id="latest-books">
+								<h2>Ultimos Libros</h2>
+								#{get 'latest_books' /}
+							</div>
+							<div id="latest-movies">
+								<h2>Ultimas peliculas</h2>
+								#{get 'latest_movies' /}
+							</div>
+							
+							
+						</div>
+					</div>
+				</div>
+				<div id="column1">
+					<div class="module">
+						<p>
+							Ultimo reporte 
+						</p>
+						#{ifnot latest_report}
+							<ul>
+								
+							</ul>
+						#{/ifnot}
+					</div>
+
+				</div>
+			</div>
+			<div id="footer">
+				
+			</div>
+		</div>
+		<div id="page-footer">
+			<div id="page-footer-wrapper">
+				<p>
+					Copyright Adan Alvarado
+				</p>
+			</div>
+		</div>
+		
+	    <script src="@{'/public/javascripts/jquery-1.4.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+		#{get 'moreScripts' /}
+				
     </body>
 </html>

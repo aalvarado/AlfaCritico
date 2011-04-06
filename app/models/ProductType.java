@@ -7,15 +7,11 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-public class User extends Model {
-	public String name;
-	public String hash;
+public class ProductType extends Model {
 
-	public User(String name){
+	public String name;
+
+	public ProductType(String name) {
 		this.name = name;
-	}
-	
-	public String toString() {
-		return name;
 	}
 }

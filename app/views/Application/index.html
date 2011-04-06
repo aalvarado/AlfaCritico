@@ -1,38 +1,26 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
-#{ifnot books}
-	<p>
-		No Books
-	</p>
-#{/ifnot}
-<ul>
-	#{list items:books, as:'book'}
-		<li>
-			<input type="checkbox" id="${book.id}" ${book.done ? 'checked' : '' }>
-			${book.title}
-		</li>
-	#{/list}
-</ul>
+%{
+	if(title == null)
+	{
+		title = 'Libros y Peliculas! | AlfaCritico';
+	}
+
+}%
+
+#{set 'title'} ${title} #{/} 
 
 
-<p>
-	<a id="create-book" href="#" >Create book</a>
-	
-</p>
-
-<script type="text/javascript" charset="utf-8">
-	//create book
-	$('#create-book').click(function(){
-		$.post('@{createBook()}', {title: prompt('Book title?')}, function(book){
-			$('ul').prepend(
-				'<li><input type="checkbox" id="'+ book.id + '">'+book.title+'</li>'		
-			)
-		},'json')
-	});
-	
-	//change status
-	$('input').live('click', function(){
-		$.post('@{changeStatus()}', {id: $(this).attr('id'), done:$(this).val()})
-	})
-	
-</script>
+#{set 'latest_books'}
+	#{ifnot books}
+		<p>
+			No Books
+		</p>
+	#{/ifnot}
+	<ul>
+		#{list items:books, as:'book'}
+			<li>
+				${book.title}
+			</li>
+		#{/list}
+	</ul>
+#{/}
