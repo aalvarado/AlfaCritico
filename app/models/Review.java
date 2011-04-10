@@ -14,8 +14,8 @@ public class Review extends Model {
 	
 	@Lob
 	public String content;
-	public Date postDate; 
-	
+	public Date reviewDateCreated;
+	public Date reviewDateModified;
 	@ManyToOne
 	public User user;
 	
@@ -37,7 +37,7 @@ public class Review extends Model {
 		this.title = title;
 		this.content = content;
 		this.product = product;
-		this.postDate = new Date();
+		this.reviewDateCreated = new Date();
 	}
 	
 }

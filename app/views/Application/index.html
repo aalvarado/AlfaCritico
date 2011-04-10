@@ -10,17 +10,55 @@
 #{set 'title'} ${title} #{/} 
 
 
-#{set 'latest_books'}
-	#{ifnot books}
-		<p>
-			No Books
-		</p>
-	#{/ifnot}
-	<ul>
-		#{list items:books, as:'book'}
-			<li>
-				${book.title}
-			</li>
-		#{/list}
-	</ul>
+#{set 'latest_products'}
+	<div id="latest-reviews">
+		#{if books}
+			<h2>Ultimos Libros</h2>
+			<ul>
+			#{list items:books, as: 'book'}
+				<li  class="review" >
+					<div class="review-image">
+						
+					</div>
+					<p class="review-title" >
+						<a href="book.html">${book.title}</a>
+					</p>
+				</li>
+			#{/list}
+			</ul>
+		#{/if}
+		#{if movies}
+			<h2>Ultimos Peliculas</h2>
+			<ul>
+			#{list items:movies, as: 'movie'}
+				<li  class="review" >
+					<div class="review-image">
+						<a href="#">${review.title}</a>
+					</div>
+					<p class="review-title" >
+						<a href="book.html">${movie.title}</a>
+					</p>
+				</li>
+			#{/list}
+			</ul>
+		#{/if}
+	</div>
+#{/}
+
+#{set 'latest_reviews'}
+	<div class="module">
+		<h2>Ultimo reporte</h2>
+		#{if latest_reviews}
+			<ul>
+			#{list items:latest_reviews, as: 'review'}
+				<li> 
+					${review.title}
+					-
+					${review.product}
+					
+				</li>
+			#{/list}
+			<ul>
+		#{/if}
+	</div>
 #{/}

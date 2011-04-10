@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html>
     <head>
         <title>#{get 'title' /}</title>
@@ -10,11 +9,8 @@
     <body>
 		<div id="wrapper">
 			<div id="top-ribbon">
-				
 			</div>
-			
 			<div id="top">
-			
 				<div id="logo">
 					<strong>
 						<a href="/">AlfaCritico</a>
@@ -40,44 +36,17 @@
 				</li>
 				</ul>
 			</div>
-			
 			<div id="banner">
 			</div>
 			<div id="middle">
-				
 				<div id="content">
-					#{doLayout /}
-					<div class="section">
-						<div id="latest-reviews">
-							<div id="latest-books">
-								<h2>Ultimos Libros</h2>
-								#{get 'latest_books' /}
-							</div>
-							<div id="latest-movies">
-								<h2>Ultimas peliculas</h2>
-								#{get 'latest_movies' /}
-							</div>
-							
-							
-						</div>
-					</div>
+					#{get 'latest_products' /}
 				</div>
 				<div id="column1">
-					<div class="module">
-						<p>
-							Ultimo reporte 
-						</p>
-						#{ifnot latest_report}
-							<ul>
-								
-							</ul>
-						#{/ifnot}
-					</div>
-
+					#{get 'latest_reviews' /}
 				</div>
 			</div>
 			<div id="footer">
-				
 			</div>
 		</div>
 		<div id="page-footer">
@@ -87,9 +56,7 @@
 				</p>
 			</div>
 		</div>
-		
 	    <script src="@{'/public/javascripts/jquery-1.4.2.min.js'}" type="text/javascript" charset="utf-8"></script>
 		#{get 'moreScripts' /}
-				
     </body>
 </html>

@@ -15,21 +15,22 @@ public class Product extends Model {
 	
 	@ManyToOne
 	public ProductType productType;
+	
 	@ManyToOne
-	public Author author;
+	public Person person;
 	
 	@OneToMany
 	public List<Rating> ratings;
 	
-	public Product(String title) {
-		this.title = title;
-	}
 	
 	public String toString() {
 		return title;
 	}
 	
-	public Product(String title, String image_url,Author author){
-		
+	public Product(String title, String image_url,Person person,ProductType product_type){
+		this.title = title;
+		this.image_url = image_url;
+		this.person = person;
+		this.productType = product_type;
 	}
 }

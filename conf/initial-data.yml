@@ -14,21 +14,81 @@ ProductType(book):
 ProductType(movie):
     name: movie
 
-Author(author1):
-    name: Sir Flemming
+Person(person1):
+    name: Fyodor Dostoevsky
 
-Author(author2):
-    name: Sir Parker
+Person(person2):
+    name: Bram Stoker
 
-Author(author2):
-    name: Sir sir
+Person(person3):
+    name: Mary Wollstonecraft Shelley
+
+Person(person4):
+    name: Herman Melville
+
+Person(person5):
+    name: Henry James
+
+Person(person6):
+    name: Herman Melville
 
 Product(p1):
-    title: a very nice title
+    title: Crime and Punishment
     image_url: none
-    Author: author2
+    person: person2
+    productType: book
 
 Product(p2):
-    title: another very nice title
+    title: Dracula
     image_url: none
-    Author: author2
+    person: person2
+    productType: book
+
+Product(p3):
+    title: Frankenstein
+    image_url: none
+    person: person3
+    productType: book
+
+Product(p4):
+    title: Moby Dick
+    image_url: none
+    person: person4
+    productType: movie
+
+Product(p5):
+    title: Pandora
+    image_url: none
+    person: person5
+    productType: movie
+
+Product(p6):
+    title: Iron Man
+    image_url: none
+    person: person6
+    productType: movie
+
+Review(r1):
+   user: adan
+   title: my review 1
+   content: This is a small review and I like reviewing
+   product: p1
+   
+Review(r2):
+   user: adan2
+   title: my review 2
+   content: This is another review
+   product: p1
+   
+Review(r3):
+   user: adan
+   title: my review 3
+   content: looooooooong review about nothing much, I like doing reviews and also like doing looooong text 
+   product: p2
+
+Review(r4):
+   user: adan2
+   title: my review 4
+   content: Almost no review
+   product: p5
+   

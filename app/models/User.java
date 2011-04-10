@@ -27,7 +27,6 @@ public class User extends Model {
 		this.email = email;
 		this.name = name;
 		this.hash = hash;
-		
 	}
 
 	public static User connect(String email, String hash) {

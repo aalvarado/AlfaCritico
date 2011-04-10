@@ -37,7 +37,8 @@ public class BasicTest extends UnitTest {
 	@Test
 	public void createReview(){
 		User bob = new User("bob@gmail.com","bob", "password").save();
-		Product p = new Product("book 1").save();
+		Product p = new Product("some title","some url",new Person("test person"),new ProductType("product type")).save();
+		
 		new Review(bob,"test title","test content looooong content maybe some html? <aaa>",p).save();
 		
 		// test post created
@@ -50,10 +51,6 @@ public class BasicTest extends UnitTest {
 		assertNotNull(r);
 		assertEquals(bob,r.user);
 		assertEquals("test title",r.title);
-		assertNotNull(r.postDate);
-		
-		
-		
+		assertNotNull(r.reviewDateCreated);
 	}
-
 }

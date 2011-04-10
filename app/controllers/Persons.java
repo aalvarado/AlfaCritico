@@ -8,6 +8,6 @@ import org.hsqldb.Database;
 
 import models.*;
 
-public class Authors extends CRUD{
+public class Persons extends CRUD{
 	
 }

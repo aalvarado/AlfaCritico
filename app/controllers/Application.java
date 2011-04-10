@@ -13,20 +13,15 @@ public class Application extends Controller {
 
     public static void index() {
         //String name = "world";
-    	List books =  Product.find("order by id desc").fetch();
-    	List movies =  Product.find("order by id desc").fetch();
-    	render(books);
-    }
-    
-    public static void createBook(String title){
-    	Product book = new Product(title).save();
-    	renderJSON(book);
-    }
-    
-    public static void changeStatus(long id, boolean done){
-    	Product book = Product.findById(id);
-    	book.save();
-    	renderJSON(book);
     	
+    	ProductType ptMovie = ProductType.find("byName", "movie").first();
+    	ProductType ptBook = ProductType.find("byName", "book").first();
+    	
+    	List<Product> books =  Product.find("productType=? order by dateAdded desc", ptBook).fetch(3);
+    	List<Product> movies =  Product.find("productType=? order by dateAdded desc", ptMovie).fetch(3);
+    	
+    	List<Review> latest_reviews = Review.find("order by reviewDateCreated desc").fetch(10);
+    	
+    	render(books, movies,latest_reviews);
     }
 }
