@@ -13,6 +13,9 @@ public class Product extends Model {
 	public String image_url;
 	public Date dateAdded;
 	
+	@Lob 
+	public String shortDescription;
+	
 	@ManyToOne
 	public ProductType productType;
 	
@@ -27,7 +30,7 @@ public class Product extends Model {
 		return title;
 	}
 	
-	public Product(String title, String image_url,Person person,ProductType product_type){
+	public Product(String title,String shortDescription, String image_url,Person person,ProductType product_type){
 		this.title = title;
 		this.image_url = image_url;
 		this.person = person;

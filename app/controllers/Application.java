@@ -24,4 +24,21 @@ public class Application extends Controller {
     	
     	render(books, movies,latest_reviews);
     }
+     
+    public static void product(Long id){
+    	if(id != null){
+    		Product product = Product.findById(id);
+        	render(product);
+    	}
+    	else{
+    		render();
+    	}
+    	
+    }
+    
+    public static void products(){
+    	List<Product> products = Product.find("order by dateAdded desc").fetch(10);
+    	render(products);
+    }
+    
 }

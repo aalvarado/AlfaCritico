@@ -18,10 +18,10 @@
 			#{list items:books, as: 'book'}
 				<li  class="review" >
 					<div class="review-image">
-						
+						<a href="@{Application.product(book.id)}">${book.title}</a>
 					</div>
 					<p class="review-title" >
-						<a href="book.html">${book.title}</a>
+						<a href="@{Application.product(book.id)}">${book.title}</a>
 					</p>
 				</li>
 			#{/list}
@@ -33,10 +33,10 @@
 			#{list items:movies, as: 'movie'}
 				<li  class="review" >
 					<div class="review-image">
-						<a href="#">${review.title}</a>
+						<a href="@{Application.product(movie.id)}">${movie.title}</a>
 					</div>
 					<p class="review-title" >
-						<a href="book.html">${movie.title}</a>
+						<a href="@{Application.product(movie.id)}">${movie.title}</a>
 					</p>
 				</li>
 			#{/list}

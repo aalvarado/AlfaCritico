@@ -34,36 +34,42 @@ Person(person6):
 
 Product(p1):
     title: Crime and Punishment
+    shortDescription: Crime and Punishment is a novel by the Russian author Fyodor Dostoevsky. It was first published in the SWiss literary journal The Russian Messenger in twelve monthly installments during 1866.[1] It was later published in a single volume. This is the second of Dostoevsky's full-length novels following his return from five years of exile in Siberia, where he was serving his sentence in Katorga camps, the Tsarist forced-labor system and predecessor to the Soviet Gulag. Crime and Punishment is the first great novel of his "mature period" of writing.[2]
     image_url: none
     person: person2
     productType: book
 
 Product(p2):
     title: Dracula
+    shortDescription: Dracula is an 1897 novel by Irish author Bram Stoker, featuring as its primary antagonist the vampire Count Dracula. It was first published as a hardcover in 1897 by Archibald Constable and Co.[1] <br /> Dracula has been assigned to many literary genres including vampire literature, horror fiction, the gothic novel and invasion literature. Structurally it is an epistolary novel, that is, told as a series of letters, diary entries, ships' logs, etc. Literary critics have examined many themes in the novel, such as the role of women in Victorian culture, conventional and conservative sexuality, immigration, colonialism, postcolonialism and folklore. Although Stoker did not invent the vampire, the novel's influence on the popularity of vampires has been singularly responsible for many theatrical, film and television interpretations since its publication.
     image_url: none
     person: person2
     productType: book
 
 Product(p3):
     title: Frankenstein
+    shortDescription: Frankenstein; or, The Modern Prometheus is a novel written by Mary Shelley. Shelley started writing the story when she was eighteen, and the novel was published when she was twenty-one. The first edition was published anonymously in London in 1818. Shelley's name appears on the second edition, published in France. It is common to refer to the monster itself as "Frankenstein", but in the novel the monster is identified via words such as "monster", "fiend", "wretch", "vile insect", "daemon", and "it"; Shelley herself called it "Adam".
     image_url: none
     person: person3
     productType: book
 
 Product(p4):
     title: Moby Dick
+    shortDescription: ssssssss
     image_url: none
     person: person4
     productType: movie
 
 Product(p5):
     title: Pandora
+    shortDescription: Pandora is a short story from Henry James
     image_url: none
     person: person5
     productType: movie
 
 Product(p6):
     title: Iron Man
+    shortDescription: Iron Man (Anthony Edward "Tony" Stark) is a fictional character, a superhero in the Marvel Comics Universe. The character first appeared in Tales of Suspense #39 (March 1963), and was created by writer-editor Stan Lee, scripter Larry Lieber, and artists Don Heck and Jack Kirby.
     image_url: none
     person: person6
     productType: movie
