@@ -1,0 +1,6 @@
+09 Apr 2011 02:38:57,190 INFO  ~ Starting C:\Documents and Settings\Adan.DESKTOP\Desktop\play-1.1.1\alfacritico
+09 Apr 2011 02:38:57,200 INFO  ~ Module crud is available (C:\Documents and Settings\Adan.DESKTOP\Desktop\play-1.1.1\modules\crud)
+09 Apr 2011 02:38:58,162 WARN  ~ You're running Play! in DEV mode
+09 Apr 2011 02:38:58,342 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+09 Apr 2011 02:39:08,216 INFO  ~ Connected to jdbc:hsqldb:mem:playembed
+09 Apr 2011 02:39:10,239 INFO  ~ Application 'Alfacritico' is now started !

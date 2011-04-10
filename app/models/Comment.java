@@ -4,6 +4,7 @@ import play.*;
 import play.db.jpa.*;
 
 import javax.persistence.*;
+
 import java.util.*;
 
 @Entity
@@ -15,6 +16,9 @@ public class Comment extends Model {
 	
 	@ManyToMany(cascade=CascadeType.PERSIST)
 	public List<Comment> parentComment = new ArrayList<Comment>();
+	
+	@ManyToOne
+	public User user;
 	
 	public Comment(String content) {
 		this.content = content;

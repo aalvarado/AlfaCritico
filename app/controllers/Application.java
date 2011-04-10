@@ -14,6 +14,7 @@ public class Application extends Controller {
     public static void index() {
         //String name = "world";
     	List books =  Product.find("order by id desc").fetch();
+    	List movies =  Product.find("order by id desc").fetch();
     	render(books);
     }
     

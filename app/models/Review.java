@@ -4,12 +4,15 @@ import play.*;
 import play.db.jpa.*;
 
 import javax.persistence.*;
+
 import java.util.*;
 
 @Entity
 public class Review extends Model {
 
 	public String title;
+	
+	@Lob
 	public String content;
 	public Date postDate; 
 	
@@ -19,7 +22,8 @@ public class Review extends Model {
 	@ManyToOne
 	public Product product;
 	
-	
+	@OneToMany
+	public List<Rating> ratings;
 	
 	public Review(String title) {
 		this.title = title;
@@ -28,4 +32,12 @@ public class Review extends Model {
 	public String toString() {
 		return title;
 	}
+	public Review(User user, String title, String content, Product product){
+		this.user =user;
+		this.title = title;
+		this.content = content;
+		this.product = product;
+		this.postDate = new Date();
+	}
+	
 }

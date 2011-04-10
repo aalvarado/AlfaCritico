@@ -1,0 +1,34 @@
+User(adan):
+    name: Adan
+    email: adan@gmail.com
+    hash: secret
+
+User(adan2):
+    name: Adan2
+    email: adan2@gmail.com
+    hash: secret2
+
+ProductType(book):
+    name: book
+
+ProductType(movie):
+    name: movie
+
+Author(author1):
+    name: Sir Flemming
+
+Author(author2):
+    name: Sir Parker
+
+Author(author2):
+    name: Sir sir
+
+Product(p1):
+    title: a very nice title
+    image_url: none
+    Author: author2
+
+Product(p2):
+    title: another very nice title
+    image_url: none
+    Author: author2
