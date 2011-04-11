@@ -26,8 +26,8 @@
 			<div id="navigation">
 				<ul>
 					<li><a href="/">Inicio</a></li>
-					<li><a href="@{Application.products}">Peliculas</a></li>
-					<li><a href="@{Application.products}">Libros</a></li>
+					<li><a href="@{Application.products(0,"movie")}">Peliculas</a></li>
+					<li><a href="@{Application.products(0,"book")}">Libros</a></li>
 					<li id="search-element">
 						<div id="search-wrapper">
 						<input type="text" class="input_text" name="search" />
@@ -36,14 +36,14 @@
 				</li>
 				</ul>
 			</div>
-			<div id="banner">
+			<div id="banner" class="#{get 'banner_class' /}" >
 			</div>
 			<div id="middle">
-				<div id="content">
+				<div id="content" class="#{get 'content_class' /}">
 					#{get 'latest_products' /}
 					#{get 'content' /}
 				</div>
-				<div id="column1">
+				<div id="column1"  class="#{get 'column_class' /}" >
 					#{get 'latest_reviews' /}
 					#{get 'sidebar' /}
 				</div>

@@ -8,7 +8,10 @@ import java.util.*;
 
 @Entity
 public class User extends Model {
+	
+	@Column(unique=true)
 	public String email;
+	@Column(unique=true)
 	public String name;
 	public String hash;
 	

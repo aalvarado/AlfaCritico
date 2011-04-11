@@ -9,6 +9,38 @@
 
 
 #{set 'title'} ${title} #{/} 
+#{set 'banner_class' }hide#{/}
+#{set 'column_class' }hide#{/}
+#{set 'content_class'}full-width#{/}
 #{set 'content'}
-	test
+	#{form @Application.addUser()}
+		<h2>Registrar cuenta nueva</h2>
+		<fieldset id="register">
+			<p>
+				<label for="name">
+					Name
+				</label>
+				<input type="text" class="input_text" id="name" />
+			</p>
+			<p>
+				<label for="password">
+					Password
+				</label>
+				<input type="text" class="input_text" id="password" />
+			</p>
+			<p>
+				<label for="confirmpassword">
+					Confirm Password
+				</label>
+				<input type="text" class="input_text" id="confirmpassword" />
+			</p>
+			<p>
+				<label for="email">
+					Email
+				</label>
+				<input type="text" class="input_text" id="email" />
+			</p>
+			<input type="submit" class="input_submit" value="Register" />
+		</fieldset>
+	#{/form}
 #{/}

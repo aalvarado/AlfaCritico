@@ -21,7 +21,7 @@
 						<a href="@{Application.product(book.id)}">${book.title}</a>
 					</div>
 					<p class="review-title" >
-						<a href="@{Application.product(book.id)}">${book.title}</a>
+						<a href="@{Application.product(book.id)	}">${book.title}</a>
 					</p>
 				</li>
 			#{/list}
@@ -52,9 +52,11 @@
 			<ul>
 			#{list items:latest_reviews, as: 'review'}
 				<li> 
+					<a href="@{Application.review(review.id)}">
 					${review.title}
 					-
 					${review.product}
+					</a>
 					
 				</li>
 			#{/list}

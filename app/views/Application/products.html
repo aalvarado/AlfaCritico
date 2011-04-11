@@ -10,5 +10,11 @@
 
 #{set 'title'} ${title} #{/} 
 #{set 'content'}
-	test
+	#{if products}
+	    <ul>
+	    	#{list products, as:'product'}
+	    	    <li><a href="@{Application.product(product.id)} ">${product.title}</a></li>
+	    	#{/list}
+	    </ul>
+	#{/if}
 #{/}

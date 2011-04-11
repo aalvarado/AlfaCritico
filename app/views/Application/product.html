@@ -1,4 +1,4 @@
-﻿#{extends 'main.html' /}
+#{extends 'main.html' /}
 #{set 'content'}
 	#{if product}
 		#{set 'title'}${product.title} | AlfaCritico#{/}
@@ -8,12 +8,14 @@
 		</div>
 		#{set 'sidebar' }
 			#{if reviews}
-				<h2>Reseñas</h2>
-				<ul>
-				#{list reviews, as:'review'}
-				   <li>${review.title}</li> 
-				#{/list}
-				</ul>
+				<div class="module">
+					<h2>Reseñas</h2>
+					<ul>
+					#{list reviews, as:'review'}
+					   <li><a href="@{Application.review(review.id)}">${review.title}</a></li> 
+					#{/list}
+					</ul>
+				</div>
 			#{/if}					
 		#{/}
 	#{/if}

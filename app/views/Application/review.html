@@ -6,9 +6,18 @@
 	}
 
 }%
-
-
-#{set 'title'} ${title} #{/} 
 #{set 'content'}
-	test
+	#{if review}
+		#{set 'title'}${review.title}#{/}
+		<h2>${review.title}</h2>
+		<span class="subheading">review of <a href="@{Application.product(review.product.id)}">${review.product.title}</a></span>
+		
+		<div class="review-content">
+			${review.content.raw()};
+		</div>
+		#{set 'sidebar'}
+		
+		#{/}
+		
+	#{/if}	
 #{/}

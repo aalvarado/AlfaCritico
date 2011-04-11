@@ -46,10 +46,22 @@ public class Application extends Controller {
     	
     }
     
-    public static void products() {
+    public static void products(Integer start,String type) {
+    	int max = 10;
+    	if(start == null){
+    		start = 0;
+    	}
+    	ProductType productType = ProductType.find("byName", type).first();
     	
-		render();
+    	List<Products> products = Product.find("productType=? order by dateAdded desc",productType).from(start).fetch(max);
+		render(products);
 	}
+    public static void review(Long id){
+    	
+    	Review review = Review.findById(id);
+    	
+    	render(review);
+    }
     public static void login(){
     	render();
     }
@@ -60,6 +72,14 @@ public class Application extends Controller {
     	render();
     }
     public static void addProduct(){
+    	render();
+    }
+    public static void addReview(){
+    	
+    	render();
+    }
+    public static void addUser(){
+    	
     	render();
     }
 }

@@ -16,6 +16,12 @@ ul,ol{
 	line-height:1px;
 	font-size:1px;
 }
+.hide{
+	display:none;
+	height:0px;
+	width:0px;
+}
+
 .center{
 	text-align:center;
 }
@@ -223,4 +229,9 @@ p{
 	right:20px;
 	top:10px;
 	padding:10px;
+}
+#content.full-width{
+	width:auto;
+	float:none;
+	margin-right:0px;
 }

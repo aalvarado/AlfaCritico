@@ -2,3 +2,8 @@
 /tmp
 /eclipse
 /.settings
+
+/db/db.lck
+/db/db.log
+/db/db.properties
+/db/db.script
