@@ -1,0 +1,26 @@
+﻿#{extends 'main.html' /}
+#{set 'content'}
+	#{if product}
+		#{set 'title'}${product.title} | AlfaCritico#{/}
+		<h2>${product.title}</h2>
+		<div class="product-short-description">
+			${product.shortDescription.raw()}
+		</div>
+		#{set 'sidebar' }
+			#{if reviews}
+				<h2>Reseñas</h2>
+				<ul>
+				#{list reviews, as:'review'}
+				   <li>${review.title}</li> 
+				#{/list}
+				</ul>
+			#{/if}					
+		#{/}
+	#{/if}
+	#{else}
+		<div>
+			<h2>No se encontro libro o pelicula</h2>
+		</div>
+	#{/else}
+#{/}
+s

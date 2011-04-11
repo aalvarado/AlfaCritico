@@ -34,7 +34,7 @@ Person(person6):
 
 Product(p1):
     title: Crime and Punishment
-    shortDescription: Crime and Punishment is a novel by the Russian author Fyodor Dostoevsky. It was first published in the SWiss literary journal The Russian Messenger in twelve monthly installments during 1866.[1] It was later published in a single volume. This is the second of Dostoevsky's full-length novels following his return from five years of exile in Siberia, where he was serving his sentence in Katorga camps, the Tsarist forced-labor system and predecessor to the Soviet Gulag. Crime and Punishment is the first great novel of his "mature period" of writing.[2]
+    shortDescription: ñCrime and Punishment is a novel by the Russian author Fyodor Dostoevsky. It was first published in the SWiss literary journal The Russian Messenger in twelve monthly installments during 1866.[1] It was later published in a single volume. This is the second of Dostoevsky's full-length novels following his return from five years of exile in Siberia, where he was serving his sentence in Katorga camps, the Tsarist forced-labor system and predecessor to the Soviet Gulag. Crime and Punishment is the first great novel of his "mature period" of writing.[2]
     image_url: none
     person: person2
     productType: book

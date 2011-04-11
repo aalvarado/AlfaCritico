@@ -18,16 +18,16 @@
 				</div>
 				<div id="login-panel">
 					<ul>
-						<li><a href="login.html">iniciar sesion</a></li>
-						<li><a href="register.html">registrarse</a></li>
+						<li><a href="@{Application.login}">iniciar sesion</a></li>
+						<li><a href="@{Application.register}">registrarse</a></li>
 					</ul>
 				</div>
 			</div>
 			<div id="navigation">
 				<ul>
 					<li><a href="/">Inicio</a></li>
-					<li><a href="/movies">Peliculas</a></li>
-					<li><a href="/books">Libros</a></li>
+					<li><a href="@{Application.products}">Peliculas</a></li>
+					<li><a href="@{Application.products}">Libros</a></li>
 					<li id="search-element">
 						<div id="search-wrapper">
 						<input type="text" class="input_text" name="search" />

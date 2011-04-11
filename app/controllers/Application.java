@@ -28,7 +28,17 @@ public class Application extends Controller {
     public static void product(Long id){
     	if(id != null){
     		Product product = Product.findById(id);
-        	render(product);
+    		if(product != null){
+    			List<Review> reviews = Review.find("byProduct",product).fetch(10);
+    			if(reviews.size() > 0){
+    				render(product,reviews);
+    			}else{
+    				render(product);
+    			}
+    			
+    		}else{
+    			render();
+    		}
     	}
     	else{
     		render();
@@ -36,9 +46,20 @@ public class Application extends Controller {
     	
     }
     
-    public static void products(){
-    	List<Product> products = Product.find("order by dateAdded desc").fetch(10);
-    	render(products);
+    public static void products() {
+    	
+		render();
+	}
+    public static void login(){
+    	render();
     }
-    
+    public static void register(){
+    	render();
+    }
+    public static void results(){
+    	render();
+    }
+    public static void addProduct(){
+    	render();
+    }
 }
