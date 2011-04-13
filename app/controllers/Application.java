@@ -13,6 +13,22 @@ import org.hsqldb.Database;
 import models.*;
 
 public class Application extends Controller {
+	
+    @Before(unless="login")
+    static void checkAuthentification() {
+    	if(session.get("userId") != null){
+    		Long userId = Long.parseLong(session.get("userId")); 
+    		User user = User.find("byId",userId).first();
+    		renderArgs.put("user", user);
+    	}
+        	
+    }
+
+    
+    public static void logout(){
+    	session.clear();
+    	index();
+    }
 
     public static void index() {
         //String name = "world";
@@ -60,8 +76,12 @@ public class Application extends Controller {
     	render(review,reviews,product);
     }
     public static void login(){
+    	if(session.get("userId") != null){
+    		index();
+    	}else{
+    		render();
+    	}
     	
-    	render();
     }
     public static void register(){
     	
@@ -91,6 +111,8 @@ public class Application extends Controller {
     	}else{
     		User user = User.connect(email, password);
     		if(user != null){
+    			//notFoundIfNull(user);
+    			session.put("userId", user.id);
     			profile();
     		}else{
     			validation.addError("email", "correo o contraseña invalida");

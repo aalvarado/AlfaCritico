@@ -18,8 +18,15 @@
 				</div>
 				<div id="login-panel">
 					<ul>
-						<li><a href="@{Application.login}">iniciar sesion</a></li>
-						<li><a href="@{Application.register}">registrarse</a></li>
+						#{if user}
+					    	<li><a href="@{Application.profile}">${user.name}</a></li>
+					    	<li><a href="@{Application.logout}">finalizar sesion</a></li>
+					    	
+						#{/if}
+						#{else}
+							<li><a href="@{Application.login}">iniciar sesion</a></li>
+							<li><a href="@{Application.register}">registrarse</a></li>
+						#{/else}					
 					</ul>
 				</div>
 			</div>
