@@ -1,0 +1,8 @@
+
+	#{if _sidebar_reviews}
+	    #{list _sidebar_reviews, as:'rev'}
+    	    <li><a href="@{Application.review(rev.id)}">${rev.title}</a></li>
+    	#{/list}
+	#{/if}
+
+	

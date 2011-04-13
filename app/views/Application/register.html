@@ -15,32 +15,47 @@
 #{set 'content'}
 	#{form @Application.addUser()}
 		<h2>Registrar cuenta nueva</h2>
+	    #{ifErrors}
+	        <p class="error">
+	            Hubo un error(es) al procesar la forma.	            	
+	        </p>
+	    #{/ifErrors}
+	    
+	      #{if flash.success}
+		    <p class="success">
+		    	${flash.success}
+		    </p>
+		#{/if}
 		<fieldset id="register">
 			<p>
 				<label for="name">
-					Name
+					Nombre
 				</label>
-				<input type="text" class="input_text" id="name" />
+				<input type="text" class="input_text" id="name" name="name" value="${params.name}"/>
+				<span class="error">#{error 'name' /}</span>
 			</p>
 			<p>
 				<label for="password">
-					Password
+					Contraseña
 				</label>
-				<input type="text" class="input_text" id="password" />
+				<input type="password" class="input_text" id="password" name="password" value="${params.password}" />
+				<span class="error">#{error 'password' /}</span>
 			</p>
 			<p>
 				<label for="confirmpassword">
-					Confirm Password
+					Confirmar contraseña
 				</label>
-				<input type="text" class="input_text" id="confirmpassword" />
+				<input type="password" class="input_text" id="confirm_password" name="confirm_password" value="${params.confirm_password}" />
+				<span class="error">#{error 'confirm_password' /}</span>
 			</p>
 			<p>
 				<label for="email">
 					Email
 				</label>
-				<input type="text" class="input_text" id="email" />
+				<input type="text" class="input_text" name="email" id="email" value="${params.email}" />
+				<span class="error">#{error 'email' /}</span>
 			</p>
-			<input type="submit" class="input_submit" value="Register" />
+			<input type="submit" class="input_submit" value="Registrar" />
 		</fieldset>
 	#{/form}
 #{/}

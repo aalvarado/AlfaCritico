@@ -16,7 +16,19 @@
 			${review.content.raw()};
 		</div>
 		#{set 'sidebar'}
-		
+			<div class="module">
+				<h2>More reviews</h2>
+				#{if reviews}
+				    #{list-product-reviews sidebar_reviews:reviews /}
+				#{/if}
+				#{else}
+					<p>
+						No hay mas reseñas para este producto, <a href="@{Application.review}">Agrega una</a>
+					</p>
+					
+				#{/else}
+				
+			</div>
 		#{/}
 		
 	#{/if}	

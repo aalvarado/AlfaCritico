@@ -10,5 +10,40 @@
 
 #{set 'title'} ${title} #{/} 
 #{set 'content'}
-	test
+	#{form @Application.verifyLogin()}
+		<h2>Iniciar Sesion</h2>
+	
+	    #{ifErrors}
+	        <p class="error">
+	            Hubo un error(es) al procesar la forma.	            	
+	        </p>
+	    #{/ifErrors}
+	    
+	      #{if flash.success}
+		    <p class="success">
+		    	${flash.success}
+		    </p>
+		#{/if}
+	
+		<fieldset>
+			<p>
+				 <Label>
+				 	Correo
+				 </label>
+				 <input type="text" class="input_text" name="email" />
+				 <span class="error">#{error 'email' /}</span>
+			</p>
+			<p>
+				 <Label>
+				 	Contraseña
+				 </label>
+				 <input type="password" class="input_text" name="password" />
+				 <span class="error">#{error 'password' /}</span>
+			</p>
+			<p>
+				<input type="submit" class="input_submit"  value="Iniciar sesion" /> 
+			</p>
+			
+		</fieldset>
+	#{/form}
 #{/}

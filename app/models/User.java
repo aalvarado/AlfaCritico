@@ -14,6 +14,7 @@ public class User extends Model {
 	@Column(unique=true)
 	public String name;
 	public String hash;
+	public Boolean isAdmin;
 	
 	@OneToMany
 	public List<Rating> ratings;

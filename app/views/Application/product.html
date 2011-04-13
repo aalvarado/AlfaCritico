@@ -7,16 +7,21 @@
 			${product.shortDescription.raw()}
 		</div>
 		#{set 'sidebar' }
-			#{if reviews}
-				<div class="module">
-					<h2>Reseñas</h2>
+			<div class="module">
+				<h2>Reseñas</h2>
+				#{if reviews}
 					<ul>
 					#{list reviews, as:'review'}
 					   <li><a href="@{Application.review(review.id)}">${review.title}</a></li> 
 					#{/list}
 					</ul>
-				</div>
-			#{/if}					
+				#{/if}
+				#{else}
+					<p>
+						No hay mas reseñas para este producto, <a href="@{Application.review}">Agrega una</a>
+					</p>
+				#{/else}
+			</div>
 		#{/}
 	#{/if}
 	#{else}

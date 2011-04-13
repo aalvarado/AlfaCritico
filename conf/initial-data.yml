@@ -2,11 +2,12 @@ User(adan):
     name: Adan
     email: adan@gmail.com
     hash: secret
-
+    isAdmin: true
 User(adan2):
     name: Adan2
     email: adan2@gmail.com
     hash: secret2
+    isAdmin: false
 
 ProductType(book):
     name: book
