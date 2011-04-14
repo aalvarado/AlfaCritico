@@ -32,6 +32,7 @@ public class Product extends Model {
 	
 	public Product(String title,String shortDescription, String image_url,Person person,ProductType product_type){
 		this.title = title;
+		this.shortDescription = shortDescription;
 		this.image_url = image_url;
 		this.person = person;
 		this.productType = product_type;

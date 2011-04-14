@@ -93,13 +93,21 @@ public class Application extends Controller {
     public static void addProduct(){
     	render();
     }
-    public static void addReview(){
-    	
-    	render();
+    public static void addReview(Long productId,String new_review_title,String new_review_content){
+    	Product product = Product.findById(productId);
+    	User user = User.findById(Long.parseLong(session.get("userId")));
+    	Review review = new Review(user,new_review_title,new_review_content,product);
+    	review.save();
+    	review(review.id);
     }
     public static void profile(){
+    	if(session.get("userId") != null){
+    	User user = User.findById(Long.parseLong(session.get("userId")));	
+    		render(user);
+    	}else{
+    		login();
+    	}
     	
-    	render();
     }
     public static void verifyLogin(String email, String password){
     	validation.required(email).message("* email es requerido");
@@ -129,6 +137,8 @@ public class Application extends Controller {
     	validation.required(password).message("* Requerido");
     	validation.required(confirm_password).message("* Requerido");
     	validation.equals(password, confirm_password).message("* Las contraseñas no coinciden");
+    	validation.match(name,"^[a-zA-Z0-9]{2,20}$").message("* Nombre solo puede contener letras y numeros.");
+    	
     	
     	if(validation.hasErrors()){
     		

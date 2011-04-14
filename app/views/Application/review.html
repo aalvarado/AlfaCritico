@@ -32,4 +32,43 @@
 		#{/}
 		
 	#{/if}
+	#{if user}
+		#{form @Application.addReview(review.product.id, new_review_content)}
+			<fieldset>
+			    #{ifErrors}
+			        <p class="error">
+			            Hubo un error(es) al procesar la forma.	            	
+			        </p>
+			    #{/ifErrors}
+			    
+			      #{if flash.success}
+				    <p class="success">
+				    	${flash.success}
+				    </p>
+				#{/if}
+			
+				<h2>Agregar reseña</h2>
+			
+				<p>
+					 <Label>
+					 	Titulo
+					 </label>
+					 <input type="text" class="input_text" name="new_review_title" />
+					 <span class="error">#{error 'new_review_title' /}</span>
+				</p>
+				<p>
+					 <Label>
+					 	contenido
+					 </label>
+					 <textarea class="textarea" name="new_review_content" id="new_review_content">${params.new_review_content}</textarea>
+					 <span class="error">#{error 'new_review_content' /}</span>
+				</p>
+				<p>
+					<input type="submit" class="input_submit"  value="Añadir referencia" /> 
+				</p>
+				
+			</fieldset>
+		#{/form}
+	#{/if}
+	
 #{/}
